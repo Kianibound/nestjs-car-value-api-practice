@@ -8,6 +8,14 @@ Content-Type: application/json
     "password":"user123"
 }
 
+### Get Current user is signed in
+
+GET http://localhost:3000/auth/whoami
+
+### Sign out current user
+
+POST http://localhost:3000/auth/signout
+
 ### Singin user
 POST http://localhost:3000/auth/signin
 Content-Type: application/json
