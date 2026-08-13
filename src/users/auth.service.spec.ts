@@ -62,4 +62,30 @@ describe('AuthService', () => {
       expect(error).toBeDefined();
     }
   });
+
+  it('thorws if an invalid password is provided', async () => {
+    fakeUsersService.find = () =>
+      Promise.resolve([{ email: 'dsfj@sdf.com', password: 'sdfb' } as User]);
+    try {
+      await service.signin('sdfsgdf@fhsf.com', 'password');
+    } catch (error) {
+      expect(error).toBeDefined();
+    }
+  });
+
+  it('returns a user if correct password is provided', async () => {
+    fakeUsersService.find = () =>
+      Promise.resolve([
+        {
+          email: 'ehsan@kiani.com',
+          password:
+            'f1a6560414aac29f.be0cc920d80cb3048d104e13b05675a55000d2b213ab68354e139c04ca8f4ef6',
+        } as User,
+      ]);
+
+    const user = await service.signin('ehsan@kiani.com', 'password');
+    // const user =  await service.signup('ehsan@kiani.com', 'password')
+    // console.log(user);
+    expect(user).toBeDefined();
+  });
 });
