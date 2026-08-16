@@ -4,11 +4,19 @@ POST http://localhost:3000/reports
 Content-Type: application/json
 
 {
-    "make":"Honda",
-    "model":"Just",
-    "year":2002,
-    "mileage":200,
+    "make":"BYD",
+    "model":"Elec",
+    "year":2025,
+    "mileage":100,
     "lng":0,
     "lat":0,
-    "price":1000
+    "price":10000
+}
+
+### Approve existing report
+PATCH  http://localhost:3000/reports/6
+Content-Type:application/json
+
+{
+    "approved": false
 }
