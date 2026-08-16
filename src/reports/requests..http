@@ -5,9 +5,9 @@ Content-Type: application/json
 
 {
     "make":"BYD",
-    "model":"Elec",
-    "year":2025,
-    "mileage":100,
+    "model":"Elec2",
+    "year":2024,
+    "mileage":1000,
     "lng":0,
     "lat":0,
     "price":10000
